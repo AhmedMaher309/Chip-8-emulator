@@ -327,9 +327,99 @@ void Chip::OP_Annn()
 	index = address;
 }
 
+// JP V0, address
+// jump to location nnn + V0
+void Chip8::OP_Bnnn()
+{
+	uint16_t address = opcode & 0x0FFFu;
+
+	pc = registers[0] + address;
+}
 
 
+// RND Vx, byte
+// set Vx = random byte AND kk
+void Chip8::OP_Cxkk()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t byte = opcode & 0x00FFu;
 
+	registers[Vx] = randByte(randGen) & byte;
+}
+
+// DRW Vx, Vy, nibble
+/*
+ * We iterate over the sprite, row by row and column by column. 
+ * We know there are eight columns because a sprite is guaranteed to be eight pixels wide.
+ * If a sprite pixel is on then there may be a collision with what’s already being displayed, 
+ * so we check if our screen pixel in the same location is set. If so we must set the VF register to express collision.
+ * Then we can just XOR the screen pixel with 0xFFFFFFFF to essentially XOR it with the sprite pixel (which we now know is on). 
+ * We can’t XOR directly because the sprite pixel is either 1 or 0 while our video pixel is either 0x00000000 or 0xFFFFFFFF.
+ */
+void Chip8::OP_Dxyn()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t Vy = (opcode & 0x00F0u) >> 4u;
+	uint8_t height = opcode & 0x000Fu;
+
+	// Wrap if going beyond screen boundaries
+	uint8_t xPos = registers[Vx] % VIDEO_WIDTH;
+	uint8_t yPos = registers[Vy] % VIDEO_HEIGHT;
+
+	registers[0xF] = 0;
+
+	for (unsigned int row = 0; row < height; ++row)
+	{
+		uint8_t spriteByte = memory[index + row];
+
+		for (unsigned int col = 0; col < 8; ++col)
+		{
+			uint8_t spritePixel = spriteByte & (0x80u >> col);
+			uint32_t* screenPixel = &video[(yPos + row) * VIDEO_WIDTH + (xPos + col)];
+
+			// Sprite pixel is on
+			if (spritePixel)
+			{
+				// Screen pixel also on - collision
+				if (*screenPixel == 0xFFFFFFFF)
+				{
+					registers[0xF] = 1;
+				}
+
+				// Effectively XOR with the sprite pixel
+				*screenPixel ^= 0xFFFFFFFF;
+			}
+		}
+	}
+}
+
+// SKP Vx
+// skip next instruction if the key with the value of Vx is pressed
+void Chip8::OP_Ex9E()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+
+	uint8_t key = registers[Vx];
+
+	if (keypad[key])
+	{
+		pc += 2;
+	}
+}
+
+// SKNP
+// skip next instruction if the key with the value of Vx is not pressed
+void Chip8::OP_ExA1()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+
+	uint8_t key = registers[Vx];
+
+	if (!keypad[key])
+	{
+		pc += 2;
+	}
+}
 
 
 
