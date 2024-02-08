@@ -17,6 +17,18 @@ set(HEADERS
     source/platform.hpp
 )
 
+# Include the glad source directory
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/source/glad)
+
 # Create executable
-add_executable(chip8 ${SOURCES} ${HEADERS})
+add_executable(chip8 ${SOURCES} ${HEADERS} source/glad/glad.c)
+
+# Find OpenGL
+find_package(OpenGL REQUIRED)
+
+# Find SDL2
+find_package(SDL2 REQUIRED)
+
+# Link libraries
+target_link_libraries(chip8 ${OPENGL_LIBRARIES} ${SDL2_LIBRARIES})
 

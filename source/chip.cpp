@@ -165,6 +165,27 @@ void Chip8::Cycle()
 	}
 }
 
+
+void Chip8::Table0()
+{
+	((*this).*(table0[opcode & 0x000Fu]))();
+}
+
+void Chip8::Table8()
+{
+	((*this).*(table8[opcode & 0x000Fu]))();
+}
+
+void Chip8::TableE()
+{
+	((*this).*(tableE[opcode & 0x000Fu]))();
+}
+
+void Chip8::TableF()
+{
+	((*this).*(tableF[opcode & 0x00FFu]))();
+}
+
 //////////////////////////////////////// The instructions //////////////////////////////////////
 
 // NULL instruction
@@ -294,6 +315,16 @@ void Chip8::OP_8xy2()
 	uint8_t Vy = (opcode & 0x00F0u) >> 4u;
 	
 	registers[Vx] &= registers[Vy];
+}
+
+// XOR Vx, Vy
+// set Vx = Vx XOR Vy
+void Chip8::OP_8xy3()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t Vy = (opcode & 0x00F0u) >> 4u;
+
+	registers[Vx] ^= registers[Vy];
 }
 
 // ADD Vx, Vy
@@ -621,6 +652,16 @@ void Chip8::OP_Fx1E()
 	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
 
 	index += registers[Vx];
+}
+
+// LD I, Vx
+// set I = I + Vx
+void Chip8::OP_Fx29()
+{
+	uint8_t Vx = (opcode & 0x0F00u) >> 8u;
+	uint8_t digit = registers[Vx];
+
+	index = FONTSET_START_ADDRESS + (5 * digit);
 }
 
 //LD B, Vx
