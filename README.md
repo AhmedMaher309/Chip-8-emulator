@@ -1,12 +1,11 @@
 # Chip-8 Emulator
-
-## ![Review](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/tetris.gif)
-## ![Architecture](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/Screenshot%20from%202024-02-10%2019-56-53.png)
-
-
-
 ## Overview
 This repository contains a Chip8 emulator, a program that simulates the behavior of a Chip8 virtual machine. The Chip8 is an interpreted programming language developed in the mid-1970s for early microcomputers. It was designed to simplify the development of games and applications for these systems.
+
+## ![Review](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/tetris.gif)
+
+## ![Architecture](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/Screenshot%20from%202024-02-10%2019-56-53.png)
+
 
 ## Features
 - The emulator accurately emulates the Chip8 virtual machine, including its CPU instructions, memory layout, and display rendering.
