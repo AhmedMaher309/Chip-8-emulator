@@ -64,6 +64,7 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
 
 ## Functions
 1- Each function represents an instruction that has the same opcode as the function name 
+
 2- [Instructions Cheat sheet](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/chip8ref.pdf)
 
 
