@@ -1,5 +1,9 @@
 # Chip-8 Emulator
 
+![Architecture](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/Screenshot%20from%202024-02-10%2019-56-53.png)
+
+
+
 ## Overview
 This repository contains a Chip8 emulator, a program that simulates the behavior of a Chip8 virtual machine. The Chip8 is an interpreted programming language developed in the mid-1970s for early microcomputers. It was designed to simplify the development of games and applications for these systems.
 
@@ -23,8 +27,10 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
     
 
 ## Functions
-    Each function represents an instruction that has the same opcode as the function name 
-    [Instructions Cheat sheet](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/chip8ref.pdf)
+1- Each function represents an instruction that has the same opcode as the function name 
+2- [Instructions Cheat sheet](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/chip8ref.pdf)
+
+
     
 
 
