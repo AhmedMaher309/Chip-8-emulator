@@ -1,7 +1,5 @@
 # Chip-8 Emulator
 
-# Chip-8 Emulator
-
 ## ![Review](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/tetris.gif)
 ## ![Architecture](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/Screenshot%20from%202024-02-10%2019-56-53.png)
 
