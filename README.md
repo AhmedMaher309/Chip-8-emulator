@@ -44,7 +44,7 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
 
 
 
-## Resources
+## References
 
 - [Guide to making a CHIP-8 emulator](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/)
 - [Building a CHIP-8 Emulator](https://austinmorlan.com/posts/chip8_emulator/)
