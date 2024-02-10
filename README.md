@@ -44,5 +44,10 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
 
     
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+
 
 
