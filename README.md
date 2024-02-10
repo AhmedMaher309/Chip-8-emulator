@@ -26,20 +26,11 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
     +-+-+-+-+             +-+-+-+-+
 
 ## Implementation Overview
+1- Each function represents an instruction with a matching opcode
 
-    Each function represents an instruction with a matching opcode.
+2- You can find a cheat sheet for instructions [here](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/chip8ref.pdf)
 
-    You can find a cheat sheet for instructions [here](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/chip8ref.pdf).
-
-    GLAD library files have been included and are accessed directly from the local directory.
-
-## Implementation Notes
-1- Each function represents an instruction that has the same opcode as the function name 
-
-2- [Instructions Cheat sheet](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/chip8ref.pdf)
-
-3- I added the glad library files and used them directly from the local directory
-
+3- GLAD library files have been included and are accessed directly from the local directory
 
 ## Resources
 
