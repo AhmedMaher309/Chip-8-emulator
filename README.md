@@ -1,6 +1,6 @@
 # Chip-8 Emulator
 
-## (https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/Screenshot%20from%202024-02-10%2019-56-53.png)
+![Architecture](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/Screenshot%20from%202024-02-10%2019-56-53.png)
 
 
 
