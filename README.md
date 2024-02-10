@@ -42,17 +42,6 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
 
 3- GLAD library files have been included and are accessed directly from the local directory
 
-
-
-## References
-
-- [Guide to making a CHIP-8 emulator](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/)
-- [Building a CHIP-8 Emulator](https://austinmorlan.com/posts/chip8_emulator/)
-- [Games used for testing](https://github.com/dmatlack/chip8/tree/master/roms/games)
-
-
-
-
     
 
 
