@@ -32,6 +32,15 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
 2- [Instructions Cheat sheet](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/chip8ref.pdf)
 
 
+## Resources
+
+- [Guide to making a CHIP-8 emulator ]([https://github.com/AhmedMaher309/Chip-8-emulator](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/)
+- [Building a CHIP-8 Emulator](https://austinmorlan.com/posts/chip8_emulator/)
+- [Games used for testing](https://github.com/dmatlack/chip8/tree/master/roms/games)
+
+
+
+
     
 
 
