@@ -32,6 +32,17 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
 
 3- GLAD library files have been included and are accessed directly from the local directory
 
+
+## How to run 
+#### Find games [here](https://github.com/dmatlack/chip8/tree/master/roms/games)
+
+    git clone https://github.com/AhmedMaher309/Chip-8-emulator.git
+    create a build directory to run the cmake in it and type <cmake ..>
+    add a rom file for the game you want to play
+    type:  ./chip8 <dimenstion> <delay> game.ch8
+    example: ./chip8 15 3 tetris.ch8
+    
+
 ## Resources
 
 - [Guide to making a CHIP-8 emulator](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/)
