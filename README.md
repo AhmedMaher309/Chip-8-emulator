@@ -13,6 +13,16 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
 - The emulator provides a graphical display of the Chip8 screen and allows user input via a keyboard.
 
 
+## How to run 
+#### Find games [here](https://github.com/dmatlack/chip8/tree/master/roms/games)
+
+    git clone https://github.com/AhmedMaher309/Chip-8-emulator.git
+    create a build directory to run the cmake in it and type <cmake ..>
+    add a rom file for the game you want to play
+    type:  ./chip8 <dimenstion> <delay> game.ch8
+    example: ./chip8 15 3 tetris.ch8
+    
+
 ### Keyboard mapping for the emulator
     Keypad in Chip-8       Keyboard
     +-+-+-+-+             +-+-+-+-+
@@ -24,24 +34,20 @@ This repository contains a Chip8 emulator, a program that simulates the behavior
     +-+-+-+-+             +-+-+-+-+
     |A|0|B|F|             |Z|X|C|V|
     +-+-+-+-+             +-+-+-+-+
-    
 
-## Functions
-1- Each function represents an instruction that has the same opcode as the function name 
+## Implementation Overview
+1- Each function represents an instruction with a matching opcode
 
-2- [Instructions Cheat sheet](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/chip8ref.pdf)
+2- You can find a cheat sheet for instructions [here](https://github.com/AhmedMaher309/Chip-8-emulator/blob/main/assets/chip8ref.pdf)
 
-
-## Resources
-
-- [Guide to making a CHIP-8 emulator](https://tobiasvl.github.io/blog/write-a-chip-8-emulator/)
-- [Building a CHIP-8 Emulator](https://austinmorlan.com/posts/chip8_emulator/)
-- [Games used for testing](https://github.com/dmatlack/chip8/tree/master/roms/games)
-
-
-
+3- GLAD library files have been included and are accessed directly from the local directory
 
     
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 
 
 
