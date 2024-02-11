@@ -64,14 +64,14 @@ Chip8::Chip8()
 	table[0x5] = &Chip8::OP_5xy0;
 	table[0x6] = &Chip8::OP_6xkk;
 	table[0x7] = &Chip8::OP_7xkk;
-	table[0x8] = &Chip8::Table8;   // doesn't excute commands
+	table[0x8] = &Chip8::Table8;   // doesn't excute commands but go to the Table8 function
 	table[0x9] = &Chip8::OP_9xy0;
 	table[0xA] = &Chip8::OP_Annn;
 	table[0xB] = &Chip8::OP_Bnnn;
 	table[0xC] = &Chip8::OP_Cxkk;
 	table[0xD] = &Chip8::OP_Dxyn;
-	table[0xE] = &Chip8::TableE;   // doesn't excute commands
-	table[0xF] = &Chip8::TableF;   // doesn't excute commands
+	table[0xE] = &Chip8::TableE;   
+	table[0xF] = &Chip8::TableF;   
 
 	// make sure that the indeces that doesn't represent any instructions
 	// are all assigned to the NULL instruction
