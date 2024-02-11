@@ -107,6 +107,9 @@ class Chip8 {
 	uint8_t sp{};
 	uint16_t opcode{};
 
+
+	// used for the instruction which places a
+	// random number into a register (Cxkk instruction)
 	std::default_random_engine randGen;
 	std::uniform_int_distribution<uint8_t> randByte;
 
