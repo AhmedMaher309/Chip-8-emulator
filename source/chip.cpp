@@ -64,7 +64,7 @@ Chip8::Chip8()
   table[0x9] = &Chip8::OP_9xy0;
   table[0xA] = &Chip8::OP_Annn;
   table[0xB] = &Chip8::OP_Bnnn;
-  table[0xC] = &Chip8::OP_Cxkk;
+  table[0xC] = &Chip8::OP_Cxnn;
   table[0xD] = &Chip8::OP_Dxyn;
   table[0xE] = &Chip8::TableE;
   table[0xF] = &Chip8::TableF;
@@ -397,7 +397,7 @@ void Chip8::OP_Bnnn() {
 
 // RND Vx, byte
 // set Vx = random byte AND kk
-void Chip8::OP_Cxkk() {
+void Chip8::OP_Cxnn() {
   uint8_t Vx = (opcode & 0x0F00u) >> 8u;
   uint8_t byte = opcode & 0x00FFu;
 

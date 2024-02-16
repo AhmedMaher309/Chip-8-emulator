@@ -71,7 +71,7 @@ class Chip8 {
 	// JP V0, address
 	void OP_Bnnn();
 	// RND Vx, byte
-	void OP_Cxkk();
+	void OP_Cxnn();
 	// DRW Vx, Vy, height
 	void OP_Dxyn();
 	// SKP Vx
