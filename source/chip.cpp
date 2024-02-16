@@ -385,7 +385,7 @@ void Chip8::OP_9xy0() {
 // set I = nnn
 void Chip8::OP_Annn() {
   uint16_t address = opcode & 0x0FFFu;
-  index = address;
+  I = address;
 }
 
 // JP V0, address
@@ -417,7 +417,7 @@ void Chip8::OP_Dxyn() {
   registers[0xF] = 0;
 
   for (unsigned int row = 0; row < height; ++row) {
-    uint8_t spriteByte = memory[index + row];
+    uint8_t spriteByte = memory[I + row];
 
     for (unsigned int col = 0; col < 8; ++col) {
       uint8_t spritePixel = spriteByte & (0x80u >> col);
@@ -526,7 +526,7 @@ void Chip8::OP_Fx18() {
 // set I = I + Vx
 void Chip8::OP_Fx1E() {
   uint8_t Vx = (opcode & 0x0F00u) >> 8u;
-  index += registers[Vx];
+  I += registers[Vx];
 }
 
 // LD I, Vx
@@ -534,7 +534,7 @@ void Chip8::OP_Fx1E() {
 void Chip8::OP_Fx29() {
   uint8_t Vx = (opcode & 0x0F00u) >> 8u;
   uint8_t digit = registers[Vx];
-  index = FONTSET_START_ADDRESS + (5 * digit);
+  I = FONTSET_START_ADDRESS + (5 * digit);
 }
 
 // LD B, Vx
@@ -547,15 +547,15 @@ void Chip8::OP_Fx33() {
   uint8_t value = registers[Vx];
 
   // Ones-place
-  memory[index + 2] = value % 10;
+  memory[I + 2] = value % 10;
   value /= 10;
 
   // Tens-place
-  memory[index + 1] = value % 10;
+  memory[I + 1] = value % 10;
   value /= 10;
 
   // Hundreds-place
-  memory[index] = value % 10;
+  memory[I] = value % 10;
 }
 
 // LD [I], Vx
@@ -564,7 +564,7 @@ void Chip8::OP_Fx55() {
   uint8_t Vx = (opcode & 0x0F00u) >> 8u;
 
   for (uint8_t i = 0; i <= Vx; ++i)
-    memory[index + i] = registers[i];
+    memory[I + i] = registers[i];
 }
 
 // LD Vx,[I]
@@ -573,5 +573,5 @@ void Chip8::OP_Fx65() {
   uint8_t Vx = (opcode & 0x0F00u) >> 8u;
 
   for (uint8_t i = 0; i <= Vx; ++i)
-    registers[i] = memory[index + i];
+    registers[i] = memory[I + i];
 }

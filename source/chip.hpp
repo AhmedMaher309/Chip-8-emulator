@@ -99,7 +99,7 @@ class Chip8 {
 
 	uint8_t memory[MEMORY_SIZE]{};
 	uint8_t registers[REGISTER_COUNT]{};
-	uint16_t index{};
+	uint16_t I{};
 	uint16_t pc{};
 	uint8_t delayTimer{};
 	uint8_t soundTimer{};
